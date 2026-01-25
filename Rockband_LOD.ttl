@@ -1,6 +1,6 @@
-@base <https://riurun2023.github.io/Rockband_LOD/dataset.ttl> .
-@prefix oa: <https://riurun2023.github.io/Rockband_LOD/dataset.ttl#> .
-@prefix oav: <https://riurun2023.github.io/Rockband_LOD/vocab#> .
+@base <https://riurun0912.github.io/Rockband_LOD/dataset.ttl> .
+@prefix oa: <https://riurun0912.github.io/Rockband_LOD/dataset.ttl#> .
+@prefix oav: <https://riurun0912.github.io/Rockband_LOD/vocab#> .
 
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
