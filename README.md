@@ -1,0 +1,2 @@
+# Rockband_LOD
+LODを活用した楽器学習支援に用いるデモRDFデータ
