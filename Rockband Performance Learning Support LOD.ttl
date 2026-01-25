@@ -74,11 +74,10 @@ oa:AshitaMo_Audio_Full
 
 oa:AshitaMo_Stem_Vocal
     a schema:AudioObject, mo:Track ;
-    schema:name "Vo.音源（未登録）"@ja ;
+    schema:name "Vo.音源"@ja ;
+     schema:url <https://www.youtube.com/watch?v=7YOX1BM7yW8&list=RD7YOX1BM7yW8&start_radio=1> ;
     oav:part oa:Part_Vocal ;
     schema:isPartOf oa:AshitaMo ;
-    oav:status "missing"@en ;
-    schema:description "未登録。"@ja .
 
 oa:AshitaMo_Stem_Guitar
     a schema:AudioObject, mo:Track ;
@@ -343,13 +342,13 @@ oa:Term_Tablature
 
 oa:TabSymbol_1
     a schema:DefinedTerm ;
-    schema:name "タブ譜特殊記号1"@ja ;
-    schema:description "未確定の記号として扱う。"@ja .
+    schema:name "アルペジオ"@ja ;
+    schema:url <https://sheetmusic.jp.yamaha.com/blogs/how-to/read-sheet-music-13?srsltid=AfmBOop1DebwJXN3oC81f7Bw2M5TSryTcExNOutKA2hdtnnHS8H5jn2C> .
 
 oa:TabSymbol_2
     a schema:DefinedTerm ;
-    schema:name "タブ譜特殊記号2"@ja ;
-    schema:description "未確定の記号として扱う。"@ja .
+    schema:name "スライド"@ja ;
+    schema:url <http://www.sjr-guitar.com/readingscore/readingtab> .
 
 oav:InstrumentPart a rdfs:Class ;
     rdfs:label "InstrumentPart"@en ;
