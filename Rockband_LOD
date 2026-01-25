@@ -1,0 +1,378 @@
+@base <https://riurun2023.github.io/Rockband_LOD/dataset.ttl> .
+@prefix oa: <https://riurun2023.github.io/Rockband_LOD/dataset.ttl#> .
+@prefix oav: <https://riurun2023.github.io/Rockband_LOD/vocab#> .
+
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oa:dataset
+    a dcat:Dataset ;
+    dcterms:title "ロックバンド演奏音源の構造化アーカイブと学習支援への応用：ギターパート起点LODサンプルデータセット"@ja ;
+    dcterms:description "ロックバンド演奏実践知（音作り・奏法・機材）を体系的に学ぶための情報フローモデルに基づく、楽曲「明日も」のギターパートを起点としたRDFデータ。"@ja ;
+    dcterms:isReferencedBy <https://doi.org/10.24506/jsda.9.s2_s212> ;
+    dcterms:creator "森本理希, 大井将生"@ja ;
+    dcterms:publisher "同志社大学 文化情報学部 デジタルアーカイブ・情報活用研究室"@ja ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:subject "ロックバンド"@ja, "演奏学習"@ja, "LOD"@ja ;
+    dcterms:hasPart
+        oa:Shishamo ,
+        oa:AshitaMo ,
+        oa:Glossary ,
+        oa:TechniqueSet ,
+        oa:EquipmentSet ,
+        oa:ScoreSet ;
+    dcterms:references
+        <https://musicbrainz.org/> ,
+        <https://dbpedia.org/> .
+
+oa:Shishamo
+    a schema:MusicGroup, foaf:Group ;
+    schema:name "SHISHAMO"@ja ;
+    foaf:homepage <https://shishamo.biz/> ;
+    owl:sameAs <https://musicbrainz.org/artist/b4ec0834-e5e4-4dab-b909-10cb21ebf3b2> ;
+    owl:sameAs <http://dbpedia.org/resource/Shishamo_(band)> .
+
+oa:AshitaMo
+    a schema:MusicRecording ;
+    schema:name "明日も"@ja ;
+    schema:byArtist oa:Shishamo ;
+    owl:sameAs <https://musicbrainz.org/recording/037a3fb3-c441-4a42-9e10-51ff011201d2> ;
+    schema:audio oa:AshitaMo_Audio_Full ;
+    oav:hasStem
+        oa:AshitaMo_Stem_Vocal ,
+        oa:AshitaMo_Stem_Guitar_1 ,
+        oa:AshitaMo_Stem_Guitar_2 ,
+        oa:AshitaMo_Stem_Bass ,
+        oa:AshitaMo_Stem_Drums_1 ,
+        oa:AshitaMo_Stem_Drums_2 ;
+    oav:hasScore
+        oa:Score_Band ,
+        oa:Score_Lyrics ,
+        oa:Score_GuitarTab ,
+        oa:Score_BassTab ,
+        oa:Score_DrumScore ;
+    dcterms:subject oa:Glossary, oa:TechniqueSet, oa:EquipmentSet .
+
+oa:Part_Vocal  a oav:InstrumentPart ; rdfs:label "Vo."@ja .
+oa:Part_Guitar a oav:InstrumentPart ; rdfs:label "Gt."@ja .
+oa:Part_Bass   a oav:InstrumentPart ; rdfs:label "Bass"@ja .
+oa:Part_Drums  a oav:InstrumentPart ; rdfs:label "Dr."@ja .
+
+oa:AshitaMo_Audio_Full
+    a schema:AudioObject ;
+    schema:name "楽曲音源（明日も）"@ja ;
+    schema:url <https://www.youtube.com/watch?v=zhCtzmDWsN0&list=RDzhCtzmDWsN0&start_radio=1> ;
+    schema:about oa:AshitaMo .
+
+oa:AshitaMo_Stem_Vocal
+    a schema:AudioObject, mo:Track ;
+    schema:name "Vo.音源（未登録）"@ja ;
+    oav:part oa:Part_Vocal ;
+    schema:isPartOf oa:AshitaMo ;
+    oav:status "missing"@en ;
+    schema:description "未登録。"@ja .
+
+oa:AshitaMo_Stem_Guitar
+    a schema:AudioObject, mo:Track ;
+    schema:name "Gt.音源"@ja ;
+    schema:url <https://www.youtube.com/watch?v=a3KHRpNVKt4> ;
+    oav:part oa:Part_Guitar ;
+    schema:isPartOf oa:AshitaMo .
+
+oa:AshitaMo_Stem_Bass
+    a schema:AudioObject, mo:Track ;
+    schema:name "Bass音源"@ja ;
+    schema:url <https://www.youtube.com/watch?v=5UVosav50f0&list=PLqbOkizYTWXjyFBZxKPgEkOaJ-HbObwOa&index=2> ;
+    oav:part oa:Part_Bass ;
+    schema:isPartOf oa:AshitaMo .
+
+oa:AshitaMo_Stem_Drums
+    a schema:AudioObject, mo:Track ;
+    schema:name "Dr.音源"@ja ;
+    schema:url <https://www.youtube.com/watch?v=j44XAeSm7hM&t=11s> ;
+    oav:part oa:Part_Drums ;
+    schema:isPartOf oa:AshitaMo .
+
+oa:ScoreSet
+    a schema:CreativeWork ;
+    schema:name "楽器ごとの楽譜"@ja ;
+    schema:about oa:AshitaMo ;
+    schema:hasPart oa:Score_Band, oa:Score_Lyrics, oa:Score_GuitarTab, oa:Score_BassTab, oa:Score_DrumScore .
+
+oa:Score_Band
+    a schema:CreativeWork ;
+    schema:name "バンドスコア（明日も）"@ja ;
+    schema:url <https://www.at-elise.com/elise/JPDPNH00024/> ;
+    schema:about oa:AshitaMo .
+
+oa:Score_Lyrics
+    a schema:CreativeWork ;
+    schema:name "明日も（歌詞）"@ja ;
+    schema:url <https://www.uta-net.com/song/220123/> ;
+    schema:about oa:AshitaMo ;
+    schema:inLanguage "ja" .
+
+oa:Score_GuitarTab
+    a schema:CreativeWork ;
+    schema:name "明日も（ギターTAB）"@ja ;
+    schema:url <https://easy-guitar-net.com/tabs/shishamo-ashitamo/> ;
+    schema:about oa:AshitaMo .
+
+oa:Score_BassTab
+    a schema:CreativeWork ;
+    schema:name "明日も（ベースTAB）"@ja ;
+    schema:url <https://store.piascore.com/scores/172633> ;
+    schema:about oa:AshitaMo .
+
+oa:Score_DrumScore
+    a schema:CreativeWork ;
+    schema:name "明日も（ドラム）"@ja ;
+    schema:url <https://www.at-elise.com/elise/JPDPNH00024/> ;
+    schema:about oa:AshitaMo .
+
+oa:EquipmentSet
+    a schema:Collection ;
+    schema:name "ギター詳細（機材）"@ja ;
+    schema:hasPart
+        oa:Guitar_Provision ,
+        oa:Amp_Fender_59BassmanLTD ,
+        oa:Effect_BOSS_BD2 ,
+        oa:Effect_BOSS_DS1 ,
+        oa:Cable_Soundhouse_208313 ,
+        oa:Pick_Soundhouse_54664 ,
+        oa:Strap_ErnieBall_P04069 ,
+        oa:Strings_ErnieBall_P04077 .
+
+oa:Guitar_Provision
+    a schema:Product ;
+    schema:name "ギターの種類（参照ページ）"@ja ;
+    schema:url <http://provisionguitar.com/?p=791> .
+
+oa:Amp_Fender_59BassmanLTD
+    a schema:Product ;
+    schema:name "アンプ（Fender 59 Bassman LTD 参照）"@ja ;
+    schema:url <https://jp.fender.com/products/59-bassman-ltd> ;
+    schema:additionalProperty
+        oa:AmpParam_Gain,
+        oa:AmpParam_Vol,
+        oa:AmpParam_Treble,
+        oa:AmpParam_Middle,
+        oa:AmpParam_Bass,
+        oa:AmpParam_Presence .
+
+oa:Effect_BOSS_BD2
+    a schema:Product ;
+    schema:name "エフェクター1（BOSS BD-2 参照）"@ja ;
+    schema:url <https://www.boss.info/jp/products/bd-2/> ;
+    schema:additionalProperty
+        oa:Effect1Param_Level,
+        oa:Effect1Param_Tone,
+        oa:Effect1Param_Drive .
+
+oa:Effect_BOSS_DS1
+    a schema:Product ;
+    schema:name "エフェクター2（BOSS DS-1 参照）"@ja ;
+    schema:url <https://www.boss.info/jp/products/ds-1/> ;
+    schema:additionalProperty
+        oa:Effect2Param_Level,
+        oa:Effect2Param_Tone,
+        oa:Effect2Param_Drive .
+
+oa:Cable_Soundhouse_208313
+    a schema:Product ;
+    schema:name "シールド（参照商品）"@ja ;
+    schema:url <https://www.soundhouse.co.jp/products/detail/item/208313/> .
+
+oa:Pick_Soundhouse_54664
+    a schema:Product ;
+    schema:name "ピック（参照商品）"@ja ;
+    schema:url <https://www.soundhouse.co.jp/products/detail/item/54664/> .
+
+oa:Strap_ErnieBall_P04069
+    a schema:Product ;
+    schema:name "ストラップ（Ernie Ball 参照）"@ja ;
+    schema:url <https://www.ernieball.com/guitar-accessories/straps/polypro-guitar-strap?color=British%20Racing%20Green> .
+
+oa:Strings_ErnieBall_P04077
+    a schema:Product ;
+    schema:name "弦（Ernie Ball 2221 参照）"@ja ;
+    schema:url <https://www.ernieball.com/guitar-strings/electric-guitar-strings/slinky/nickel-wound-electric-guitar-strings#P04077> .
+
+oa:AmpParam_Gain     a schema:PropertyValue ; schema:name "gain"     ; schema:value "TBD" .
+oa:AmpParam_Vol      a schema:PropertyValue ; schema:name "vol"      ; schema:value "TBD" .
+oa:AmpParam_Treble   a schema:PropertyValue ; schema:name "treble"   ; schema:value "TBD" .
+oa:AmpParam_Middle   a schema:PropertyValue ; schema:name "middle"   ; schema:value "TBD" .
+oa:AmpParam_Bass     a schema:PropertyValue ; schema:name "bass"     ; schema:value "TBD" .
+oa:AmpParam_Presence a schema:PropertyValue ; schema:name "presence" ; schema:value "TBD" .
+
+oa:Effect1Param_Level a schema:PropertyValue ; schema:name "level" ; schema:value "TBD" .
+oa:Effect1Param_Tone  a schema:PropertyValue ; schema:name "tone"  ; schema:value "TBD" .
+oa:Effect1Param_Drive a schema:PropertyValue ; schema:name "drive" ; schema:value "TBD" .
+
+oa:Effect2Param_Level a schema:PropertyValue ; schema:name "level" ; schema:value "TBD" .
+oa:Effect2Param_Tone  a schema:PropertyValue ; schema:name "tone"  ; schema:value "TBD" .
+oa:Effect2Param_Drive a schema:PropertyValue ; schema:name "drive" ; schema:value "TBD" .
+
+oa:TechniqueSet
+    a schema:DefinedTermSet ;
+    schema:name "奏法"@ja ;
+    schema:hasDefinedTerm
+        oa:Technique_Mute ,
+        oa:Technique_Stroke ,
+        oa:Technique_Cutting ,
+        oa:Technique_ChordChange ,
+        oa:Technique_BarreChord ;
+    schema:about oa:AshitaMo .
+
+oa:Technique_Mute
+    a schema:DefinedTerm ;
+    schema:name "ミュート"@ja ;
+    schema:url <https://guitar-hakase.com/?p=693> ;
+    rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%83%BC%E3%83%88_(%E3%82%AE%E3%82%BF%E3%83%BC)> .
+
+oa:Technique_Stroke
+    a schema:DefinedTerm ;
+    schema:name "ストローク"@ja ;
+    schema:url <https://guitar-hakase.com/?p=700> ;
+    rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%88%E3%83%AD%E3%83%BC%E3%82%AF> .
+
+oa:Technique_Cutting
+    a schema:DefinedTerm ;
+    schema:name "カッティング"@ja ;
+    schema:url <https://guitar-hakase.com/?p=717> ;
+    rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%83%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0_(%E9%9F%B3%E6%A5%BD)> .
+
+oa:Technique_ChordChange
+    a schema:DefinedTerm ;
+    schema:name "コードチェンジ"@ja ;
+    schema:url <https://guitar-hakase.com/?p=800> ;
+    rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%BC%E3%83%89%E9%80%B2%E8%A1%8C> .
+
+oa:Technique_BarreChord
+    a schema:DefinedTerm ;
+    schema:name "バレーコード（セーハ）"@ja ;
+    schema:url <https://guitar-hakase.com/?p=806> ;
+    rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AC%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89> .
+
+oa:Guide_ReadTab
+    a schema:HowTo ;
+    schema:name "タブ譜の読み方"@ja ;
+    schema:url <http://guitar-hakase.com/?p=5632> ;
+    schema:about oa:AshitaMo .
+
+oa:Glossary
+    a schema:DefinedTermSet ;
+    schema:name "用語"@ja ;
+    schema:hasDefinedTerm
+        oa:Term_Amp,
+        oa:Term_Effector,
+        oa:Term_ShieldCable,
+        oa:Term_Pick,
+        oa:Term_Strap,
+        oa:Term_Mute,
+        oa:Term_Stroke,
+        oa:Term_Cutting,
+        oa:Term_ChordProgression,
+        oa:Term_BarreChord,
+        oa:Term_Tablature,
+        oa:TabSymbol_1,
+        oa:TabSymbol_2 .
+
+oa:Term_Amp
+    a schema:DefinedTerm ;
+    schema:name "アンプ"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%97> .
+
+oa:Term_Effector
+    a schema:DefinedTerm ;
+    schema:name "エフェクター"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%82%BF%E3%83%BC> .
+
+oa:Term_ShieldCable
+    a schema:DefinedTerm ;
+    schema:name "シールド（シールドケーブル）"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%BC%E3%83%AB%E3%83%89%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB> .
+
+oa:Term_Pick
+    a schema:DefinedTerm ;
+    schema:name "ピック"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E6%92%A5> .
+
+oa:Term_Strap
+    a schema:DefinedTerm ;
+    schema:name "ストラップ"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97> .
+
+oa:Term_Mute
+    a schema:DefinedTerm ;
+    schema:name "ミュート（ギター）"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%83%BC%E3%83%88_(%E3%82%AE%E3%82%BF%E3%83%BC)> .
+
+oa:Term_Stroke
+    a schema:DefinedTerm ;
+    schema:name "ストローク"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%88%E3%83%AD%E3%83%BC%E3%82%AF> .
+
+oa:Term_Cutting
+    a schema:DefinedTerm ;
+    schema:name "カッティング（音楽）"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%83%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0_(%E9%9F%B3%E6%A5%BD)> .
+
+oa:Term_ChordProgression
+    a schema:DefinedTerm ;
+    schema:name "コード進行"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%BC%E3%83%89%E9%80%B2%E8%A1%8C> .
+
+oa:Term_BarreChord
+    a schema:DefinedTerm ;
+    schema:name "バレーコード"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AC%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89> .
+
+oa:Term_Tablature
+    a schema:DefinedTerm ;
+    schema:name "タブ譜"@ja ;
+    schema:url <https://ja.wikipedia.org/wiki/%E3%82%BF%E3%83%96%E8%AD%9C> .
+
+oa:TabSymbol_1
+    a schema:DefinedTerm ;
+    schema:name "タブ譜特殊記号1"@ja ;
+    schema:description "未確定の記号として扱う。"@ja .
+
+oa:TabSymbol_2
+    a schema:DefinedTerm ;
+    schema:name "タブ譜特殊記号2"@ja ;
+    schema:description "未確定の記号として扱う。"@ja .
+
+oav:InstrumentPart a rdfs:Class ;
+    rdfs:label "InstrumentPart"@en ;
+    rdfs:comment "音源や楽譜をパート（Vo/Gt/Bass/Dr）で整理するための独自クラス。"@ja .
+
+oav:hasStem a rdf:Property ;
+    rdfs:label "has stem audio"@en ;
+    rdfs:comment "楽曲（MusicRecording）からパート別音源（stem）へのリンク。"@ja ;
+    rdfs:domain schema:MusicRecording ;
+    rdfs:range schema:AudioObject .
+
+oav:part a rdf:Property ;
+    rdfs:label "part"@en ;
+    rdfs:comment "stem音源が、どのパート（Vo/Gt/Bass/Dr）に対応するかを示す。"@ja ;
+    rdfs:domain schema:AudioObject ;
+    rdfs:range oav:InstrumentPart .
+
+oav:hasScore a rdf:Property ;
+    rdfs:label "has score"@en ;
+    rdfs:comment "楽曲（MusicRecording）から、楽譜・歌詞・TAB等の参照先へのリンク。"@ja ;
+    rdfs:domain schema:MusicRecording ;
+    rdfs:range schema:CreativeWork .
+
+oav:status a rdf:Property ;
+    rdfs:label "status"@en ;
+    rdfs:comment "データが未入手/未確定などの場合に付ける簡易ステータス。"@ja .
