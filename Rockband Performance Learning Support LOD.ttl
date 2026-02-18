@@ -122,7 +122,7 @@ oa:Score_Lyrics
 oa:Score_GuitarTab
     a schema:CreativeWork ;
     schema:name "明日も（ギターTAB）"@ja ;
-    schema:url <https://easy-guitar-net.com/tabs/shishamo-ashitamo/> ;
+    schema:url <https://store.piascore.com/scores/8271> ;
     schema:about oa:AshitaMo .
 
 oa:Score_BassTab
