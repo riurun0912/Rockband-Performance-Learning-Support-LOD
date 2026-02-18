@@ -115,7 +115,7 @@ oa:Score_Band
 oa:Score_Lyrics
     a schema:CreativeWork ;
     schema:name "明日も（歌詞）"@ja ;
-    schema:url <https://www.uta-net.com/song/220123/> ;
+    schema:url <https://www.uta-net.com/song/223193/> ;
     schema:about oa:AshitaMo ;
     schema:inLanguage "ja" .
 
