@@ -109,7 +109,7 @@ oa:ScoreSet
 oa:Score_Band
     a schema:CreativeWork ;
     schema:name "バンドスコア（明日も）"@ja ;
-    schema:url <https://www.at-elise.com/elise/JPDPNH00024/> ;
+    schema:url <https://www.at-elise.com/elise/JPDPKM08576/> ;
     schema:about oa:AshitaMo .
 
 oa:Score_Lyrics
