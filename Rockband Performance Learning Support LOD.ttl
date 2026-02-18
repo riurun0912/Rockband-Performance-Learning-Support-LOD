@@ -234,37 +234,37 @@ oa:TechniqueSet
 oa:Technique_Mute
     a schema:DefinedTerm ;
     schema:name "ミュート"@ja ;
-    schema:url <https://guitar-hakase.com/?p=693> ;
+    schema:url <https://guitar-hakase.com/2766/> ;
     rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%83%BC%E3%83%88_(%E3%82%AE%E3%82%BF%E3%83%BC)> .
 
 oa:Technique_Stroke
     a schema:DefinedTerm ;
     schema:name "ストローク"@ja ;
-    schema:url <https://guitar-hakase.com/?p=700> ;
+    schema:url <https://guitar-hakase.com/2774/> ;
     rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%88%E3%83%AD%E3%83%BC%E3%82%AF> .
 
 oa:Technique_Cutting
     a schema:DefinedTerm ;
     schema:name "カッティング"@ja ;
-    schema:url <https://guitar-hakase.com/?p=717> ;
+    schema:url <https://guitar-hakase.com/2735/> ;
     rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%83%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0_(%E9%9F%B3%E6%A5%BD)> .
 
 oa:Technique_ChordChange
     a schema:DefinedTerm ;
     schema:name "コードチェンジ"@ja ;
-    schema:url <https://guitar-hakase.com/?p=800> ;
+    schema:url <https://guitar-hakase.com/2403/> ;
     rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%BC%E3%83%89%E9%80%B2%E8%A1%8C> .
 
 oa:Technique_BarreChord
     a schema:DefinedTerm ;
     schema:name "バレーコード（セーハ）"@ja ;
-    schema:url <https://guitar-hakase.com/?p=806> ;
+    schema:url <https://guitar-hakase.com/5639/> ;
     rdfs:seeAlso <https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%AC%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89> .
 
 oa:Guide_ReadTab
     a schema:HowTo ;
     schema:name "タブ譜の読み方"@ja ;
-    schema:url <http://guitar-hakase.com/?p=5632> ;
+    schema:url <https://guitar-hakase.com/renshu/tab/> ;
     schema:about oa:AshitaMo .
 
 oa:Glossary
