@@ -122,19 +122,19 @@ oa:Score_Lyrics
 oa:Score_GuitarTab
     a schema:CreativeWork ;
     schema:name "明日も（ギターTAB）"@ja ;
-    schema:url <https://store.piascore.com/scores/8271> ;
+    schema:url <https://easy-guitar-net.com/ashitamo-shishamo/> ;
     schema:about oa:AshitaMo .
 
 oa:Score_BassTab
     a schema:CreativeWork ;
     schema:name "明日も（ベースTAB）"@ja ;
-    schema:url <https://store.piascore.com/scores/172633> ;
+    schema:url <https://store.piascore.com/scores/180275> ;
     schema:about oa:AshitaMo .
 
 oa:Score_DrumScore
     a schema:CreativeWork ;
     schema:name "明日も（ドラム）"@ja ;
-    schema:url <https://www.at-elise.com/elise/JPDPNH00024/> ;
+    schema:url <https://www.at-elise.com/elise/JPDPDS00752/> ;
     schema:about oa:AshitaMo .
 
 oa:EquipmentSet
@@ -188,22 +188,22 @@ oa:Effect_BOSS_DS1
 oa:Cable_Soundhouse_208313
     a schema:Product ;
     schema:name "シールド（参照商品）"@ja ;
-    schema:url <https://www.soundhouse.co.jp/products/detail/item/208313/> .
+    schema:url <https://www.providence.jp/products/cable/cable_03.html> .
 
 oa:Pick_Soundhouse_54664
     a schema:Product ;
     schema:name "ピック（参照商品）"@ja ;
-    schema:url <https://www.soundhouse.co.jp/products/detail/item/54664/> .
+    schema:url <https://www.soundhouse.co.jp/products/detail/item/258516/> .
 
 oa:Strap_ErnieBall_P04069
     a schema:Product ;
     schema:name "ストラップ（Ernie Ball 参照）"@ja ;
-    schema:url <https://www.ernieball.com/guitar-accessories/straps/polypro-guitar-strap?color=British%20Racing%20Green> .
+    schema:url <https://www.ernieball.com/guitar-accessories/guitar-straps/polypro-guitar-straps> .
 
 oa:Strings_ErnieBall_P04077
     a schema:Product ;
     schema:name "弦（Ernie Ball 2221 参照）"@ja ;
-    schema:url <https://www.ernieball.com/guitar-strings/electric-guitar-strings/slinky/nickel-wound-electric-guitar-strings#P04077> .
+    schema:url <https://www.ernieball.com/guitar-strings/electric-guitar-strings/slinky-rps-nickel-wound-electric-guitar-strings> .
 
 oa:AmpParam_Gain     a schema:PropertyValue ; schema:name "gain"     ; schema:value "TBD" .
 oa:AmpParam_Vol      a schema:PropertyValue ; schema:name "vol"      ; schema:value "TBD" .
